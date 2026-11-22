@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CineScope - Discover movies, trailers & ratings. Professional movie discovery platform." />
+  <meta name="theme-color" content="#0b0c10" />
+  <title>CineScope | Discover Movies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="logo" id="logo">
+        <i class="fa-solid fa-film"></i>
+        <span>CineScope</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#" class="nav-link active" data-page="home">Home</a>
+        <a href="#" class="nav-link" data-page="trending">Trending</a>
+        <a href="#" class="nav-link" data-page="popular">Popular</a>
+        <a href="#" class="nav-link" data-page="top-rated">Top Rated</a>
+        <a href="#" class="nav-link" data-page="upcoming">Upcoming</a>
+        <a href="#" class="nav-link" data-page="favorites">
+          <i class="fa-solid fa-heart"></i> Favorites
+          <span class="fav-count" id="favCount">0</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search movies..." autocomplete="off" />
+          <button class="search-clear hidden" id="searchClear" aria-label="Clear search">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="search-results" id="searchResults"></div>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <!-- Hero / Banner -->
+    <section class="hero" id="heroSection">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-info" id="heroInfo">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+      <div class="hero-indicators" id="heroIndicators"></div>
+    </section>
+
+    <!-- Genre Filter -->
+    <section class="genres-section container">
+      <div class="genres-scroll" id="genresList">
+        <!-- Filled by JS -->
+      </div>
+    </section>
+
+    <!-- Movie Sections (Home) -->
+    <section class="movies-section container" id="homeSection">
+      <div class="section-header">
+        <h2><i class="fa-solid fa-fire"></i> Trending This Week</h2>
+        <a href="#" class="see-all" data-page="trending">See All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="movies-grid" id="trendingGrid"></div>
+
+      <div class="section-header">
+        <h2><i class="fa-solid fa-star"></i> Popular Movies</h2>
+        <a href="#" class="see-all" data-page="popular">See All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="movies-grid" id="popularGrid"></div>
+
+      <div class="section-header">
+        <h2><i class="fa-solid fa-trophy"></i> Top Rated</h2>
+        <a href="#" class="see-all" data-page="top-rated">See All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="movies-grid" id="topRatedGrid"></div>
+
+      <div class="section-header">
+        <h2><i class="fa-solid fa-calendar-days"></i> Upcoming</h2>
+        <a href="#" class="see-all" data-page="upcoming">See All <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="movies-grid" id="upcomingGrid"></div>
+    </section>
+
+    <!-- Listing Page (Trending / Popular / Favorites etc.) -->
+    <section class="listing-section container hidden" id="listingSection">
+      <div class="section-header">
+        <h2 id="listingTitle">Trending</h2>
+        <button class="btn btn-secondary hidden" id="clearFavoritesBtn">
+          <i class="fa-solid fa-trash"></i> Clear All
+        </button>
+      </div>
+      <div class="movies-grid" id="listingGrid"></div>
+      <div class="pagination" id="pagination"></div>
+    </section>
+
+    <!-- Movie Detail -->
+    <section class="detail-section hidden" id="detailSection">
+      <div class="detail-backdrop" id="detailBackdrop"></div>
+      <div class="container detail-container">
+        <button class="back-btn" id="backBtn">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <div class="detail-content" id="detailContent">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-film"></i>
+          <span>CineScope</span>
+        </a>
+        <p>Discover the best movies. Powered by TMDB.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="copyright">© 2026 CineScope. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    </div>
+  </footer>
+
+  <!-- Trailer Modal -->
+  <div class="modal-overlay" id="trailerModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body">
+        <iframe id="trailerFrame" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Loading Overlay -->
+  <div class="loader-overlay" id="loader">
+    <div class="loader"></div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
